@@ -13,13 +13,10 @@ defmodule ElixirPythonQrcode do
     call_python(:qrcode, :decode, [file_path])
   end
 
-  def add(a, b) do
-    call_python(:qrcode, :add, [a, b])
+  def decode_credit_card(image_arr, reference) do
+    call_python(:ocr_template_match, :decode_credit_card, [image_arr, reference])
   end
 
-  def say_hi(name) do
-    call_python(:qrcode, :say_hi, [name])
-  end
   defp default_instance() do
     #Load all modules in our priv/python directory
     path = [:code.priv_dir(:elixir_python_qrcode), "python"]

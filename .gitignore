@@ -22,3 +22,7 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 elixir_python_qrcode-*.tar
 
+.idea/
+elixir_python_qrcode.iml
+
+
