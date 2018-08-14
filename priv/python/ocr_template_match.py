@@ -6,6 +6,7 @@
 def decode_credit_card(image_arr, reference):
     from imutils import contours
     import numpy as np
+    import base64
     import argparse
     import imutils
     import cv2
@@ -40,7 +41,9 @@ def decode_credit_card(image_arr, reference):
     sqKernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 
     # load the input image, resize it, and convert it to grayscale
-    image = cv2.imdecode(image_arr)
+    img = base64.b64decode(image_arr)
+    npimg = np.fromstring(img, dtype=np.uint8)
+    image = cv2.imdecode(npimg, 1)
     image = imutils.resize(image, width=300)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
