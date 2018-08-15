@@ -151,4 +151,4 @@ def decode_credit_card(image_arr, reference):
 
     # display the output credit card information to the screen
     # print("Credit Card Type: {}".format(FIRST_NUMBER[output[0]]))
-    return output
+    return format("".join(output))
