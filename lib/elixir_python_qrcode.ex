@@ -10,7 +10,10 @@ defmodule ElixirPythonQrcode do
   end
 
   def decode(file_path) do
-    call_python(:qrcode, :decode, [file_path])
+    :io.format("~nfile_path for decode: ~p~n", [file_path])
+    x = call_python(:qrcode, :decode, [file_path])
+    :io.format("~nresponse for python: ~p~n", [x])
+    x
   end
 
   def decode_credit_card(image_arr, reference) do
